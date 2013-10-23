@@ -1,0 +1,51 @@
+[core]
+    excludesfile = c:/Users/tkido/.gitignore
+    editor = hidemaru
+    quotepath = false
+    autocrlf = true
+[user]
+    name = tkido
+    email = takanorikido@gmail.com
+[color]
+    ui = true
+[push]
+    default = tracking
+[alias]
+    s = status
+    st = status
+    
+    ad = add
+    
+    co  = checkout
+    ci  = commit
+    ca  = commit -a
+    cim = commit --amend     # 直前のcommitを修正
+    cam = commit -a --amend  # 直前のcommitを修正
+    
+    br = branch
+    ba = branch -a           # originも含めた全てのbranchを表示
+    bm = branch --merged     # merge済みのbranchを表示
+    bn = branch --no-merged  # mergeしてないbranchを表示
+    
+    # diff関連
+    dm = diff master           # masterとのdiff
+    dw = diff --color-words    # 単語単位でいろつけてdiff
+    dc = diff --cached         # addされているものとのdiff
+    ds = diff --staged         # 同上(1.6.1移行)
+    d1 = diff HEAD~            # HEADから1つ前とdiff
+    d2 = diff HEAD~~           # HEADから2つ前とdiff
+    d3 = diff HEAD~~~          # HEADから3つ前とdiff
+    d4 = diff HEAD~~~~         # HEADから4つ前とdiff
+    d5 = diff HEAD~~~~~        # HEADから5つ前とdiff
+    
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[diff]
+    tool = p4merge
+[difftool "p4merge"]
+    cmd = "p4merge.exe $LOCAL $REMOTE"
+[merge]
+    tool = p4merge
+[mergetool "p4merge"]
+    cmd = "p4merge.exe $BASE $LOCAL $REMOTE $MERGED"
+    trustExitCode = true
+    keepBackup = false
