@@ -10,8 +10,6 @@
     ui = true
 [push]
     default = tracking
-[merge]
-    ff = false
 [alias]
     s = status
     st = status
